@@ -1,0 +1,57 @@
+.custom-btn-width{
+	width: 270px;
+}
+.btn:hover{
+	box-shadow:
+  	0px 10px 30px -8px rgba(0, 0, 0, 0.3);
+}
+
+.pagination-area{
+	text-align: center;
+	margin-top: 2rem;
+
+	a{
+		border: 1px solid $primary;
+	    /* border-radius: 100%; */
+	    padding: .2rem .6rem;
+	    margin: 0 0 0 1rem;
+	    color: $primary;
+	}
+
+	a:hover {
+		background: $primary;
+		color: $secondary;
+	}
+
+	.current{
+		background: $primary;
+		color: $secondary;
+		padding: .2rem .6rem;
+		border: 1px solid $primary;
+	}
+}
+
+.close-btn {
+    right: 2rem;
+    width: 3rem;
+    height: 3rem;
+    top: 1rem;
+}
+
+.blog-read-btn {
+	position: absolute;
+	bottom: 1.7rem;
+    right: 1rem;
+}
+
+
+.btn:hover {
+	.fa {
+		color: #000;
+	}
+}
+@media (max-width: 992px) {
+	.btn{
+	width: 100%!important;
+  }
+}

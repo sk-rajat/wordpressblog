@@ -1,0 +1,72 @@
+
+// Vars
+$header-height: 5rem;
+
+@media (max-width: 992px) { 
+header nav{
+	background: $secondary;
+	border-bottom: 1px solid $primary;
+}
+
+.navbar-toggler-icon{
+	background-image: none!important;
+}
+
+.navbar-toggler{
+	outline: none!important;
+	box-shadow: none;
+}
+
+.navbar-nav{
+	text-align: center
+}
+
+.nav-item{
+	padding: 1rem
+}
+
+}
+
+ @media (min-width: 768px) { 
+.custom-btn-margin{
+	margin: auto
+ }
+}
+
+
+
+
+// Nav
+header { 
+  display: grid;
+  will-change: height;
+  position: fixed;
+  height: $header-height;
+  z-index: 999;
+  width: 100%;
+  background-color: $secondary;
+  transition: all 500ms ease;
+ 
+  
+  &.shrunk { 
+  	height: 4rem;
+  }
+
+}
+
+header ul li a {
+  transition: all 300ms ease;
+}
+
+header ul li a:hover {
+  font-weight: bold;
+}
+
+.branding {
+  transform: scaleX(1.1);
+  transition: all 100ms ease-in-out 0s;
+}
+
+.branding:hover {
+  transform: scaleX(1.4);
+}

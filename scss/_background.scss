@@ -1,0 +1,12 @@
+.custom-background {
+	background-color: #06BC9B;
+    background-image: -webkit-gradient(linear,left top,right top,from(#06BC9B),to(#1ba49c));
+    background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
+}
+
+.custom-round-background {
+    width: 2.8rem;
+    height: 2.8rem;
+    text-align: center;
+    border-radius: 100%;
+}

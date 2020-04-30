@@ -1,0 +1,38 @@
+.wp-block-columns {
+	width: 90%;
+	margin: auto;
+
+	form {
+		font-family: "Merriweather", serif, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace !important;
+	    letter-spacing: .1rem;
+	    color: #747474;
+	}
+
+	form input,
+	form textarea 
+	{
+		padding: .4rem;
+	    border: 1px solid #e8e8e8;
+	    border-radius: .2rem;
+	    color: #08bb9b;
+	    font-size: 1.5rem;
+	}
+
+	form textarea 
+	{
+	    font-size: 1.5rem;
+	}
+
+	form button {
+		background-color: #06BC9B;
+    	background-image: -webkit-gradient(linear,left top,right top,from(#06BC9B),to(#1ba49c));
+    	background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
+    	padding: .3rem 1rem;
+	}
+}
+
+ @media (max-width: 972px) { 
+.wp-block-columns {
+	width: 100%;
+ }
+}

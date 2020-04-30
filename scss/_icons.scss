@@ -1,0 +1,51 @@
+.navbar-toggler-icon:before{
+	content:'\2630';
+	color: $primary;
+	font-size: 2rem;
+	position: fixed;
+	left: 90%;
+}
+
+.fa{
+	margin-top: .3rem;
+}
+
+.medium-round-icons{
+	width: 7rem;
+}
+
+.small-round-icons{
+	width: 3rem;
+	height: 3rem;
+}
+
+.fa-facebook,
+.fa-twitter,
+.fa-github,
+.fa-whatsapp,
+.fa-instagram,
+.fa-linkedin{
+	padding: 0.4rem 0.3rem;
+	border-radius: 100%;
+	width: 2rem;
+	height: 2rem;
+}
+
+.fa-facebook{
+	background: #3b5998;
+}
+.fa-twitter{
+	background: #00acee;
+}
+.fa-github{
+	background: #424242;
+}
+.fa-linkedin{
+	background: #0077b5;
+}
+.fa-instagram{
+	background: #c41e6e;
+}
+.fa-whatsapp{
+	background: #25d366;
+}

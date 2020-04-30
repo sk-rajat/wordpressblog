@@ -1,0 +1,10 @@
+.footer-menu::after{
+	content: ' ::';
+    padding-right: .2rem;
+    color: #fff;
+}
+
+.footer-menu:last-child:after
+{
+  content: '';
+}

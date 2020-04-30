@@ -1,0 +1,18 @@
+.custom-service-small-image{
+	width: 100px;
+	height: 100px;
+}
+
+.custom-res-image{
+	width: 100%;
+}
+
+.custom-image-hover:hover{
+	background: $white
+}
+
+.avatar{
+	border-radius: 100%;
+    border: .1rem solid $primary;
+    padding: .1rem;
+}
