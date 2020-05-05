@@ -4,6 +4,12 @@
     background-image: -webkit-linear-gradient(left,#06BC9B,#1ba49c);
 }
 
+.custom-background:hover {
+	background-color: #06BC9B;
+    background-image: -webkit-gradient(linear,left top,right top,from(#1ba49c),to(#06BC9B));
+    background-image: -webkit-linear-gradient(left,#1ba49c,#06BC9B);
+}
+
 .custom-round-background {
     width: 2.8rem;
     height: 2.8rem;

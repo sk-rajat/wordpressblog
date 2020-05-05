@@ -31,7 +31,7 @@ function misha_filter_function(){
     if( $query->have_posts() ) :
         echo '<div class="row">';
         echo '<div class="col-md-8 m-auto py-5">';
-        echo '<h5 class="text-monospace font-weight-bold py-2 text-center text-gray">Listed by Titles only</h5>';
+        echo '<h5 class="text-monospace font-weight-bold py-2 mt-5 text-center text-gray">Listed by Titles only</h5>';
         while( $query->have_posts() ): $query->the_post();
             get_template_part('template-parts/blog-title');
         endwhile;

@@ -4,13 +4,12 @@
 <!--------------- HEADER INFORMATION ENDS HERE ------------------------>
 <!------------------------FRONT PAGE SECTION ONE STARTS HERE----------------->
 <div class="container-fluid">
-	<div class="row bg-secondary text-primary mt-4">
-		<div class="col-md-8 text-center">
-			<div class="front-page-image mx-auto box">
-				<img class="img-fluid" alt="Responsive image" src="https://cdn.pixabay.com/photo/2016/06/20/03/15/pier-1467984_1280.jpg" />
-			</div>
+	<div class="row bg-secondary text-primary">
+		<div class="col-md-8 m-auto overflow-hidden">
+			<!-------**********************change me later '***********--------------->
+			<img class="img-fluid animate-header-lg custom-res-image" src="<?php bloginfo('template_url'); ?>/images/header-lg.png">
 		</div>
-		<div class="col-md-4 box d-flex align-items-center mt-4">
+		<div class="col-md-4 box d-flex align-items-center overflow-hidden mt-4">
 			<div class="my-auto">
 				<h3 class="text-center text-md-left text-gray">Fully responsive, custom designed Wordpress CMS websites.</h3>
 				<a href="<?php echo get_post_type_archive_link('services'); ?>" class="btn btn-lg custom-background btn-block my-4 py-3 text-white d-flex justify-content-around border-0 custom-btn-width custom-btn-margin font-weight-bold">Learn More<i class="fa fa-chevron-circle-right fa-align-right"></i></a>
@@ -42,12 +41,21 @@
 	<div class="row box mt-4">
 		<!-----------------FRONT PAGE SECTION THREE TUTORIALS COL-6 STARTS HERE----------->
 		<div class="col-md-6 pb-4 box">
-			<img class="img-fluid" src="https://cdn.pixabay.com/photo/2016/06/20/03/15/pier-1467984_1280.jpg">
+			<?php 
+			// ********TUTORIALS SECTION IMAGE***************
+			$image = get_field('tutorials_image'); ?>
+			<?php if($image): //dont output an empty image tag ?>
+			<img class="custom-res-image" src="<?php echo $image['sizes']['frontPageFeaturedImage']; ?>" width="<?php echo $image['sizes']['frontPageFeaturedImage-width']; ?>" height="<?php echo $image['sizes']['frontPageFeaturedImage-height']; ?>" alt="<?php echo $image['caption']; ?>" />
+			<?php 
+			endif; 
+			?>
 			<hr class="custom-hr">
 			<?php
 			$tutorialsPostPage  = new WP_Query(array(
 			'post_type' => 'tutorials',
 			'posts_per_page' => '3',
+			'orderby' => 'date',
+			'order' => 'ASC',
 			));
 			$postNumber=1;
 			while ($tutorialsPostPage->have_posts()) {
@@ -69,7 +77,14 @@
 		<!-----------------FRONT PAGE SECTION THREE TUTORIALS COL-6 ENDS HERE----------->
 		<!-----------------FRONT PAGE SECTION THREE BLOG COL-6 STARTS HERE----------->
 		<div class="col-md-6 pb-4 box">
-			<img class="img-fluid" src="https://cdn.pixabay.com/photo/2016/06/20/03/15/pier-1467984_1280.jpg">
+			<?php 
+			// TUTORIALS SECTION IMAGE
+			$image = get_field('blog_image'); ?>
+			<?php if($image): //dont output an empty image tag ?>
+			<img class="custom-res-image" src="<?php echo $image['sizes']['frontPageFeaturedImage']; ?>" width="<?php echo $image['sizes']['frontPageFeaturedImage-width']; ?>" height="<?php echo $image['sizes']['frontPageFeaturedImage-height']; ?>" alt="<?php echo $image['caption']; ?>" />
+			<?php 
+			endif; 
+			?>
 			<hr class="custom-hr">
 			<?php
 			$posts  = new WP_Query(array(

@@ -45,10 +45,11 @@ add_theme_support( 'post-thumbnails' );
 
 
 // ************** ADD CUSTOM IMAGE SIZES *******************
-add_image_size( 'blogFeaturedImage', 400, 240, true );
+add_image_size( 'blogFeaturedImage', 410, 250, true );
 add_image_size( 'bigFeaturedImage', 792, 478, true );
 add_image_size( 'serviceFeaturedSmallImage', 100, 100, true );
 add_image_size( 'blogCategoriesSmallImage', 100, 100, true );
+add_image_size( 'frontPageFeaturedImage', 400, 240, true );
 
 // --------------- ADD CUSTOM IMAGE SIZES FINISH ---------------------
 
@@ -168,6 +169,19 @@ register_taxonomy('topic', ['tutorials'], $args);
 add_action('init', 'wporg_register_taxonomy_topic');
 
 
+
+
+// DISPLAYING IN ASC ORDER(TUTORIALS ARCHIVE PAGE)
+function tutorials_pre_get_posts( $query ) {
+    if ( !is_admin() AND is_post_type_archive('tutorials') AND $query->is_main_query() )
+        {
+        $query->set( 'orderby', 'meta_value_num' );
+        $query->set( 'order', 'ASC' );
+    }
+}
+add_filter( 'pre_get_posts', 'tutorials_pre_get_posts' );
+
+
 // **************    CUSTOM POST QUERIES FOR CONTROL THE STRUCTURE *********************
 /*
 function wporg_add_custom_post_types($query) {
@@ -182,14 +196,14 @@ add_action('pre_get_posts', 'wporg_add_custom_post_types');
 
 
 // CUSTOM TAXANOMIES ENDS HERE
-
-/* FOR FUTURE USE
+// FOR FUTURE USE
 function wpb_custom_new_menu() {
-  register_nav_menu('header_menu',__( 'Header Menu' ));
-  register_nav_menu('footer_menu',__( 'Footer Menu' ));
+      register_nav_menu('header_menu',__( 'Header Menu' ));
+      register_nav_menu('footer_menu',__( 'Footer Menu' ));
+      register_nav_menu('social_links',__( 'Social Links' ));
 }
 add_action( 'init', 'wpb_custom_new_menu' );
-// ------------------ CUSTOM NAV MENU FINISH --------------- */
+// CUSTOM NAV MENU FINISH ---------------
 
 /*   FOR FUTURE USE
 // BLOCK ACCESS TO /wp-admin FOR NON ADMINS & REDIRECT TO HOME URL CODE STARTS HERE.
@@ -315,12 +329,11 @@ require_once( __DIR__ . '/wp-includes/custom-body-class.php');
 // GLOBAL DATE SETTINGS
 require_once( __DIR__ . '/wp-includes/date-settings.php');
     
+// CUSTOM LOGO IN CUSTOMIZE PANEL IN WORDPRESS WEBSITE, IF HAVE ANY OR ELSE DISPLAY CUSTOM CODE 
+require_once( __DIR__ . '/wp-includes/custom-logo.php');
 
-function themename_custom_logo_setup() {
- $defaults = array(
- 'height'      => 64,
- 'width'       => 64,
- );
- add_theme_support( 'custom-logo', $defaults );
+
+
+function is_blog () {
+    return ( is_archive() || is_author() || is_category() || is_home() || is_single() || is_tag()) && 'post' == get_post_type();
 }
-add_action( 'after_setup_theme', 'themename_custom_logo_setup' );

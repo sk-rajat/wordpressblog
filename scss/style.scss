@@ -96,6 +96,9 @@ $theme-colors: (
     border-radius: .3rem;
 }
 
+.footer-links {
+	letter-spacing: .1rem;
+}
 
 .scroll {
 	scroll-behavior: smooth;
@@ -108,7 +111,7 @@ $theme-colors: (
     &__service-section {
 		height: 2.5rem;
 		&--para{
-			height: 6rem;
+			height: 5rem;
 		}
  }
 
@@ -136,6 +139,3 @@ $theme-colors: (
 
 }
 
-.blog > select:first-of-type {
-    display:none; 
-}

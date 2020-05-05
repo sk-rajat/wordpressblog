@@ -54,7 +54,7 @@ if ($tags) { ?>
 			echo '<span class="d-block my-3 py-3 text-center lead text-gray text-monospace"><i class="fa fa-tags text-primary pr-2"></i>'.'Tags'. '</span>';
 			foreach ( $tags as $tag ) {
 			$tag_link = get_tag_link( $tag->term_id ); ?>
-			<a href="<?php echo $tag_link; ?>" class="text-uppercase btn-small bg-primary custom-background rounded-pill d-inline-block text-white px-2 py-1 m-2 custom-font-size-medium"><i class="fa fa-tags text-white pr-2"></i><?php echo $tag->name; ?></a>
+			<a href="<?php echo $tag_link; ?>" class="text-uppercase btn-small bg-primary custom-background rounded-pill d-inline-block text-white px-2 m-2 custom-font-size-medium"><i class="fa fa-tags text-white pr-2"></i><?php echo $tag->name; ?></a>
 			<?php
 			}
 			?>

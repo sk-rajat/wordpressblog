@@ -41,7 +41,16 @@
 					<li class="margin-bottom justify-content-around list-group-item">
 						<div class="row d-flex align-items-center">
 							<div class="container-icon col-4">
-								<?php the_post_thumbnail('serviceFeaturedSmallImage', array('class' => 'small-round-icons rounded-circle' ));  ?>
+								<?php 
+								if (has_post_thumbnail() ) {
+									the_post_thumbnail('serviceFeaturedSmallImage', array('class' => 'small-round-icons rounded-circle' ));
+								}
+								else {
+									bigFeaturedImage();  	
+									}
+																  
+								?>
+								
 							</div>
 							<div class="container-title col-8">
 								<a href="<?php the_permalink(); ?>"><?php the_title() ?></a>

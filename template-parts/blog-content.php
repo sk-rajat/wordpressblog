@@ -6,12 +6,12 @@
 	?>
 	<div class="pl-2">
 		<a href="<?php echo site_url('/about') ?>"><span class="d-block text-primary custom-font-size-medium font-weight-bold"><?php the_author(); ?></span></a>
-		<span class="custom-font-size-medium text-gray text-uppercase font-weight-bold"><?php post_date(); ?></span>
+		<span class="custom-font-size-medium text-gray text-uppercase font-weight-bold"><i class="fa fa-calendar text-primary d-inline pl-0"></i> <?php post_date(); ?></span>
 		<span class="custom-font-size-small font-weight-bold">
 			<?php
 			$reading_time= get_field('reading_time');
 			if ($reading_time) {
-				echo " . ";
+				echo "<i class='fa fa-hourglass-half text-right text-primary d-inline'></i> ";
 				echo $reading_time;
 				echo " mins read";
 			}

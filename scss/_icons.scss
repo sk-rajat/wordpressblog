@@ -6,8 +6,41 @@
 	left: 90%;
 }
 
+#menu-social-links {
+	display: flex;
+	list-style: none;
+}
+
+#menu-social-links li {
+	margin-right: 1rem;
+}
+
+#menu-social-links li .fa {
+	color: #f7f7f7;
+}
+
 .fa{
 	margin-top: .3rem;
+	padding: 0.4rem 0.3rem;
+	border-radius: 100%;
+	width: 2rem;
+	height: 2rem;
+}
+
+.fa-eye {
+	display: inherit!important;
+}
+
+.fa-angle {
+	color: inherit;
+}
+
+.fa-chevron-circle-right {
+	padding: 0;
+}
+
+.fa-calendar {
+	font-size: 1rem!important;
 }
 
 .medium-round-icons{
@@ -19,33 +52,26 @@
 	height: 3rem;
 }
 
-.fa-facebook,
-.fa-twitter,
-.fa-github,
-.fa-whatsapp,
-.fa-instagram,
-.fa-linkedin{
-	padding: 0.4rem 0.3rem;
-	border-radius: 100%;
-	width: 2rem;
-	height: 2rem;
-}
-
 .fa-facebook{
 	background: #3b5998;
 }
+
 .fa-twitter{
 	background: #00acee;
 }
+
 .fa-github{
 	background: #424242;
 }
+
 .fa-linkedin{
 	background: #0077b5;
 }
+
 .fa-instagram{
 	background: #c41e6e;
 }
+
 .fa-whatsapp{
 	background: #25d366;
 }

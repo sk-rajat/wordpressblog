@@ -1,7 +1,7 @@
 <form class="text-center text-monospace" action="<?php echo site_url() ?>/wp-admin/admin-ajax.php" method="POST" id="filter">
 	<?php
 		if( $terms = get_terms( array( 'taxonomy' => 'category', 'orderby' => 'name' ) ) ) : 
-			echo '<select name="categoryfilter" class="rounded-pill shadow-none p-1 text-primary border border-primary"><option value="">Select category...</option>';
+			echo '<select name="categoryfilter" class="rounded-pill shadow-none p-1 text-primary border border-primary"><option value=""hidden>Select category...</option>';
 			foreach ( $terms as $term ) :
 				echo '<option value="' . $term->term_id . '">' . $term->name . '</option>'; // ID of the category as the value of an option
 			endforeach;

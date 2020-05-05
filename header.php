@@ -10,25 +10,22 @@
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 	</head>
 	<body <?php body_class(); ?> >
-		<header>
+		<header class="shadow-sm">
 			<!--------------NAVBAR STARTS HERE------------------->
 			<nav class="justify-content-between navbar navbar-expand-lg navbar-dark static-top p-0 align-items-center">
 				<div class="container">
-
 					<?php
-
 					if( function_exists( 'the_custom_logo' ) ) {
-    if(has_custom_logo()) {
-        the_custom_logo();
-    } else { ?>
-        <a class="navbar-brand branding" href="<?php echo site_url('/') ?>">
+					if(has_custom_logo()) {
+					the_custom_logo();
+					} else { ?>
+					<a class="navbar-brand branding" href="<?php echo site_url('/') ?>">
 						<img class="img-fluid" src="<?php bloginfo('template_url'); ?>/images/logo-green.png" style="width: 4rem">
-					</a>    
+					</a>
 					<?php
-				}
-}
-
-?>
+					}
+					}
+					?>
 					
 					<button class="navbar-toggler border-0 shadow-none hello" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
 					<span class="navbar-toggler-icon"></span>
